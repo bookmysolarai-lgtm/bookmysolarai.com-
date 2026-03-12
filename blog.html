@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Sales Blog | BookMySolarAI – AI Lead Conversion Tips for Solar Companies</title>
+    <meta name="description" content="Expert tips on solar lead follow-up, AI voice agents, and how to increase your solar close rate. The blog for residential solar installers who want to convert more leads.">
+    <meta name="keywords" content="solar lead follow up, solar lead conversion, AI solar, solar sales tips, solar appointment setting, residential solar installer">
+    <link rel="canonical" href="https://www.bookmysolarai.com/blog.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Solar Sales Blog | BookMySolarAI">
+    <meta property="og:description" content="Expert tips on solar lead follow-up, AI voice agents, and how to increase your solar close rate.">
+    <meta property="og:url" content="https://www.bookmysolarai.com/blog.html">
+    <meta property="og:type" content="website">
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Blog-specific styles */
+        .blog-hero {
+            padding: 140px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .blog-hero .section-title { font-size: 3.5rem; }
+        .blog-hero .section-subtitle { max-width: 600px; }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 0 0 5rem 0;
+        }
+
+        .blog-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(245, 158, 11, 0.3);
+            box-shadow: 0 20px 50px rgba(245, 158, 11, 0.08);
+        }
+
+        .blog-thumb {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .blog-thumb-placeholder {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .p1 { background: linear-gradient(135deg, #1e3a5f, #0f2344); }
+        .p2 { background: linear-gradient(135deg, #431407, #7c2d12); }
+        .p3 { background: linear-gradient(135deg, #064e3b, #065f46); }
+        .p4 { background: linear-gradient(135deg, #3b0764, #581c87); }
+        .p5 { background: linear-gradient(135deg, #1c1917, #292524); }
+        .p6 { background: linear-gradient(135deg, #0c4a6e, #075985); }
+
+        .blog-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-category {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent-primary);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+        }
+
+        .blog-title {
+            font-size: 1.2rem;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            flex: 1;
+            margin-bottom: 1.5rem;
+            max-width: none;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            padding-top: 1rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .blog-meta .read-time { display: flex; align-items: center; gap: 0.4rem; }
+        .blog-read-link {
+            color: var(--accent-primary);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: var(--transition-smooth);
+        }
+        .blog-read-link:hover { gap: 0.7rem; }
+
+        /* Featured post */
+        .blog-featured {
+            grid-column: span 2;
+        }
+
+        .blog-featured .blog-thumb-placeholder {
+            height: 260px;
+            font-size: 5rem;
+        }
+
+        .blog-featured .blog-title { font-size: 1.6rem; }
+        .blog-featured .blog-excerpt { font-size: 1.05rem; }
+
+        /* Sidebar-style newsletter */
+        .blog-newsletter {
+            background: linear-gradient(135deg, rgba(245,158,11,0.08), rgba(239,68,68,0.05));
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .blog-newsletter h3 { font-size: 1.6rem; color: white; margin-bottom: 0.5rem; }
+        .blog-newsletter p { margin: 0 auto 1.5rem; font-size: 1rem; max-width: 500px; }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.9rem 1.2rem;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            color: white;
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .topics-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 3rem;
+            justify-content: center;
+        }
+
+        .topic-tag {
+            padding: 0.5rem 1.2rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+        }
+
+        .topic-tag:hover, .topic-tag.active {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: rgba(245, 158, 11, 0.4);
+            color: var(--accent-primary);
+        }
+
+        @media (max-width: 968px) {
+            .blog-grid { grid-template-columns: 1fr 1fr; }
+            .blog-featured { grid-column: span 2; }
+            .blog-hero .section-title { font-size: 2.5rem; }
+        }
+
+        @media (max-width: 640px) {
+            .blog-grid { grid-template-columns: 1fr; }
+            .blog-featured { grid-column: span 1; }
+            .newsletter-form { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:0.5rem;">
+                    <i class="fa-solid fa-sun icon-glow"></i> BookMySolar<span class="highlight">AI</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#problem">The Problem</a></li>
+                <li><a href="index.html#features">Meet Stacy</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="blog.html" style="color:var(--accent-primary)">Blog</a></li>
+            </ul>
+            <a href="index.html#demo" class="btn btn-primary nav-btn">Book Demo</a>
+            <div class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="glow glow-1"></div>
+        <div class="container reveal">
+            <div class="badge" style="margin: 0 auto 1.5rem; display:inline-flex;">
+                <i class="fa-solid fa-pen-to-square highlight"></i> Solar Sales Intelligence
+            </div>
+            <h1 class="section-title">The <span class="gradient-text">Solar Sales</span> Blog</h1>
+            <p class="section-subtitle" style="margin: 1rem auto 2.5rem;">Actionable insights on AI lead conversion, solar sales systems, and how to stop losing high-value leads to slow follow-up.</p>
+
+            <!-- Topic Filter -->
+            <div class="topics-bar">
+                <a href="#" class="topic-tag active">All Posts</a>
+                <a href="#" class="topic-tag">Lead Response</a>
+                <a href="#" class="topic-tag">AI & Automation</a>
+                <a href="#" class="topic-tag">Solar Sales</a>
+                <a href="#" class="topic-tag">ROI & Metrics</a>
+                <a href="#" class="topic-tag">Industry Data</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section style="padding: 0 0 2rem;">
+        <div class="container">
+            <div class="blog-grid">
+
+                <!-- Featured Post -->
+                <article class="blog-card blog-featured reveal">
+                    <div class="blog-thumb-placeholder p1">⚡</div>
+                    <div class="blog-body">
+                        <span class="blog-category">Lead Response</span>
+                        <h2 class="blog-title">Why 60 Seconds is the Magic Number for Solar Lead Follow-Up (And What Happens If You Miss It)</h2>
+                        <p class="blog-excerpt">Solar companies spend $40–$300 per lead. But most of them are calling that lead 3 hours later — or the next morning. Research shows that calling within 60 seconds increases contact rates by 400%. Here's the data, why it happens, and exactly what you need to do about it.</p>
+                        <div class="blog-meta">
+                            <span class="read-time"><i class="fa-regular fa-clock"></i> 8 min read</span>
+                            <a href="blog-60-seconds.html" class="blog-read-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="blog-card reveal delay-1">
+                    <div class="blog-thumb-placeholder p2">🤖</div>
+                    <div class="blog-body">
+                        <span class="blog-category">AI & Automation</span>
+                        <h2 class="blog-title">What Is an AI Voice Agent? A Plain-English Guide for Solar Business Owners</h2>
+                        <p class="blog-excerpt">No tech jargon. Just a clear explanation of what AI voice agents do, how they work, and whether Stacy is the right fit for your solar company.</p>
+                        <div class="blog-meta">
+                            <span class="read-time"><i class="fa-regular fa-clock"></i> 6 min read</span>
+                            <a href="blog-what-is-ai-voice.html" class="blog-read-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="blog-card reveal">
+                    <div class="blog-thumb-placeholder p3">💰</div>
+                    <div class="blog-body">
+                        <span class="blog-category">ROI & Metrics</span>
+                        <h2 class="blog-title">How Much Money Are You Losing to Slow Lead Follow-Up? (Use This Calculator)</h2>
+                        <p class="blog-excerpt">If you generate 50 leads per month at $150 each and lose 40% to slow follow-up, you're burning $3,000 every single month. Here's how to calculate your exact number.</p>
+                        <div class="blog-meta">
+                            <span class="read-time"><i class="fa-regular fa-clock"></i> 5 min read</span>
+                            <a href="blog-roi-calculator.html" class="blog-read-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="blog-card reveal delay-1">
+                    <div class="blog-thumb-placeholder p4">📞</div>
+                    <div class="blog-body">
+                        <span class="blog-category">Solar Sales</span>
+                        <h2 class="blog-title">The 5 Most Common Objections on a First Solar Call (And How to Handle Every One)</h2>
+                        <p class="blog-excerpt">From "I need to talk to my spouse" to "I've already got a quote" — here are the top 5 objections solar leads throw out on the first call, with exact scripts to handle each one.</p>
+                        <div class="blog-meta">
+                            <span class="read-time"><i class="fa-regular fa-clock"></i> 7 min read</span>
+                            <a href="blog-solar-objections.html" class="blog-read-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="blog-card reveal">
+                    <div class="blog-thumb-placeholder p5">📊</div>
+                    <div class="blog-body">
+                        <span class="blog-category">Industry Data</span>
+                        <h2 class="blog-title">Solar Lead Statistics Every Installer Needs to Know in 2025</h2>
+                        <p class="blog-excerpt">78% of solar deals go to the first company to respond. The average industry response time is 47 hours. Here are 12 stats that should change how you run your solar business.</p>
+                        <div class="blog-meta">
+                            <span class="read-time"><i class="fa-regular fa-clock"></i> 5 min read</span>
+                            <a href="blog-solar-stats.html" class="blog-read-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article class="blog-card reveal delay-1">
+                    <div class="blog-thumb-placeholder p6">🚀</div>
+                    <div class="blog-body">
+                        <span class="blog-category">AI & Automation</span>
+                        <h2 class="blog-title">Human Caller vs. AI Voice Agent: Which One Wins for Solar Lead Conversion?</h2>
+                        <p class="blog-excerpt">$3,200/month for a human caller vs $499/month for Stacy. We break down response time, consistency, availability, and close rate impact — with real numbers.</p>
+                        <div class="blog-meta">
+                            <span class="read-time"><i class="fa-regular fa-clock"></i> 6 min read</span>
+                            <a href="blog-human-vs-ai.html" class="blog-read-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 7 -->
+                <article class="blog-card reveal">
+                    <div class="blog-thumb-placeholder p2" style="background: linear-gradient(135deg,#1a2e05,#2d4a08);">☀️</div>
+                    <div class="blog-body">
+                        <span class="blog-category">Solar Sales</span>
+                        <h2 class="blog-title">How to Set Up a Solar Appointment Machine: The 5-Step System Stacy Uses</h2>
+                        <p class="blog-excerpt">Lead comes in → Stacy calls in 60 sec → Qualifies homeowner → Books appointment → CRM updated. Here is each step broken down and how you can replicate it.</p>
+                        <div class="blog-meta">
+                            <span class="read-time"><i class="fa-regular fa-clock"></i> 9 min read</span>
+                            <a href="blog-appointment-machine.html" class="blog-read-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 8 -->
+                <article class="blog-card reveal delay-1">
+                    <div class="blog-thumb-placeholder p4" style="background: linear-gradient(135deg,#1c0533,#2e0e52);">🌙</div>
+                    <div class="blog-body">
+                        <span class="blog-category">Lead Response</span>
+                        <h2 class="blog-title">Weekend Solar Leads Are Your Biggest Missed Opportunity — Here's Why</h2>
+                        <p class="blog-excerpt">Homeowners fill out solar forms on Saturday and Sunday. Your sales team is off. By Monday, they've already signed with someone else. Here's how to fix it.</p>
+                        <div class="blog-meta">
+                            <span class="read-time"><i class="fa-regular fa-clock"></i> 5 min read</span>
+                            <a href="blog-weekend-leads.html" class="blog-read-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 9 -->
+                <article class="blog-card reveal">
+                    <div class="blog-thumb-placeholder p6" style="background: linear-gradient(135deg,#1a1a1a,#2d2d2d);">🎯</div>
+                    <div class="blog-body">
+                        <span class="blog-category">ROI & Metrics</span>
+                        <h2 class="blog-title">The Only 3 Metrics Your Solar Company Actually Needs to Track</h2>
+                        <p class="blog-excerpt">Speed to lead. Contact rate. Appointment show rate. If you obsess over just these three numbers, your solar business will outperform 90% of competitors in your market.</p>
+                        <div class="blog-meta">
+                            <span class="read-time"><i class="fa-regular fa-clock"></i> 6 min read</span>
+                            <a href="blog-solar-metrics.html" class="blog-read-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Arizona Local SEO Section -->
+            <div style="margin: 3rem 0 1.5rem;">
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+                    <span style="background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3);color:var(--accent-primary);padding:4px 14px;border-radius:20px;font-size:0.8rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;">📍 Local Arizona SEO</span>
+                    <span style="color:var(--text-secondary);font-size:0.9rem;">Fastest keywords to rank — target these first</span>
+                </div>
+                <div class="blog-grid">
+                    <article class="blog-card reveal">
+                        <div class="blog-thumb-placeholder" style="background:linear-gradient(135deg,#1a1a2e,#16213e);height:160px;font-size:3rem;">🌵</div>
+                        <div class="blog-body">
+                            <span class="blog-category">Phoenix, AZ</span>
+                            <h2 class="blog-title">Best Solar Lead Software in Phoenix, Arizona (2025 Guide)</h2>
+                            <p class="blog-excerpt">A complete breakdown of solar lead software options for Phoenix-based installers, with a focus on AI-driven speed-to-lead automation.</p>
+                            <div class="blog-meta">
+                                <span class="read-time"><i class="fa-regular fa-clock"></i> 7 min read</span>
+                                <a href="blog-solar-lead-software-phoenix.html" class="blog-read-link">Read <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="blog-card reveal delay-1">
+                        <div class="blog-thumb-placeholder" style="background:linear-gradient(135deg,#1c2951,#2d3f7f);height:160px;font-size:3rem;">📅</div>
+                        <div class="blog-body">
+                            <span class="blog-category">Phoenix, AZ</span>
+                            <h2 class="blog-title">Solar Appointment Setting in Phoenix, AZ: Automate Your Bookings</h2>
+                            <p class="blog-excerpt">How Phoenix solar installers are replacing manual appointment setting with AI — and booking more qualified appointments at a fraction of the cost.</p>
+                            <div class="blog-meta">
+                                <span class="read-time"><i class="fa-regular fa-clock"></i> 7 min read</span>
+                                <a href="blog-solar-appointment-setting-phoenix.html" class="blog-read-link">Read <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="blog-card reveal">
+                        <div class="blog-thumb-placeholder" style="background:linear-gradient(135deg,#0f2027,#203a43);height:160px;font-size:3rem;">🤖</div>
+                        <div class="blog-body">
+                            <span class="blog-category">Phoenix, AZ</span>
+                            <h2 class="blog-title">AI Calling Agent in Phoenix, AZ: How Solar Companies Are Using AI to Win More Deals</h2>
+                            <p class="blog-excerpt">Everything Phoenix solar owners need to know about AI calling agents — how they work, what they cost, and how they compare to human callers.</p>
+                            <div class="blog-meta">
+                                <span class="read-time"><i class="fa-regular fa-clock"></i> 8 min read</span>
+                                <a href="blog-ai-calling-agent-phoenix.html" class="blog-read-link">Read <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="blog-card reveal delay-1">
+                        <div class="blog-thumb-placeholder" style="background:linear-gradient(135deg,#3d1c47,#5b2d7e);height:160px;font-size:3rem;">🛠️</div>
+                        <div class="blog-body">
+                            <span class="blog-category">Scottsdale, AZ</span>
+                            <h2 class="blog-title">Best Solar Company Tools in Scottsdale, AZ — Complete 2025 Stack Guide</h2>
+                            <p class="blog-excerpt">The full recommended tech stack for Scottsdale solar installers — from lead response automation to CRM, design, and project management.</p>
+                            <div class="blog-meta">
+                                <span class="read-time"><i class="fa-regular fa-clock"></i> 8 min read</span>
+                                <a href="blog-solar-company-tools-scottsdale.html" class="blog-read-link">Read <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="blog-card reveal">
+                        <div class="blog-thumb-placeholder" style="background:linear-gradient(135deg,#064e3b,#065f46);height:160px;font-size:3rem;">☀️</div>
+                        <div class="blog-body">
+                            <span class="blog-category">Arizona Statewide</span>
+                            <h2 class="blog-title">Arizona Solar Installer Software: The Complete 2025 Guide</h2>
+                            <p class="blog-excerpt">The best software tools for Arizona residential solar installers — prioritized by ROI, with AZ-specific context on APS/SRP markets and HOA communities.</p>
+                            <div class="blog-meta">
+                                <span class="read-time"><i class="fa-regular fa-clock"></i> 9 min read</span>
+                                <a href="blog-arizona-solar-installer-software.html" class="blog-read-link">Read <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="blog-card reveal delay-1">
+                        <div class="blog-thumb-placeholder" style="background:linear-gradient(135deg,#1a0533,#2e1052);height:160px;font-size:3rem;">⚙️</div>
+                        <div class="blog-body">
+                            <span class="blog-category">Arizona Statewide</span>
+                            <h2 class="blog-title">Solar Lead Automation in Arizona: Stop Losing Leads to Slow Manual Follow-Up</h2>
+                            <p class="blog-excerpt">How Arizona solar companies automate their entire lead-to-appointment workflow — and why it's especially critical in the Phoenix summer market.</p>
+                            <div class="blog-meta">
+                                <span class="read-time"><i class="fa-regular fa-clock"></i> 8 min read</span>
+                                <a href="blog-solar-lead-automation-arizona.html" class="blog-read-link">Read <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Newsletter Section -->
+            <div class="blog-newsletter reveal">
+                <h3>Get Solar Sales Insights Every Week</h3>
+                <p>Join 500+ solar installers who get actionable tips on lead conversion, AI automation, and closing more deals — delivered free every Tuesday.</p>
+                <form class="newsletter-form" action="https://formsubmit.co/info@bookmysolarai.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Blog Newsletter Subscriber - BookMySolarAI">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="email" name="email" placeholder="Enter your work email..." required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid var(--glass-border); padding: 2.5rem 0; text-align:center;">
+        <div class="container">
+            <div class="logo" style="justify-content:center;margin-bottom:1rem;">
+                <i class="fa-solid fa-sun icon-glow"></i> BookMySolar<span class="highlight">AI</span>
+            </div>
+            <p style="font-size:0.9rem;">© 2025 BookMySolarAI · Phoenix, Arizona · <a href="mailto:info@bookmysolarai.com" style="color:var(--accent-primary);">info@bookmysolarai.com</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Tidio Live Chat -->
+    <script src="//code.tidio.co/qrc56uvwesr57ehfrqjb32j2ayqkzzuc.js" async></script>
+</body>
+</html>
