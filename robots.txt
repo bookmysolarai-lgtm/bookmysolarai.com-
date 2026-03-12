@@ -1,0 +1,9 @@
+# BookMySolarAI — robots.txt
+# https://www.bookmysolarai.com
+
+# Allow all crawlers full access
+User-agent: *
+Allow: /
+
+# Sitemap location — tells Google exactly where to find all pages
+Sitemap: https://www.bookmysolarai.com/sitemap.xml
